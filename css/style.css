@@ -1,0 +1,1393 @@
+/*
+ * Custom CSS for Bonsai Website
+ */
+
+/* --------------------
+ * Base & Typography
+ * -------------------- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* --------------------
+ * Navigation Bar
+ * -------------------- */
+
+.navbar {
+    /* Adding extra padding for the "airy" feel from the design */
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f0f0f0; /* Subtle separator */
+}
+
+/* Real Logo Image Styling */
+.logo-img {
+    height: 70px; /* Set a fixed height for your logo */
+    width: auto;  /* Let the width adjust automatically */
+}
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #444; /* Darker than default for better contrast */
+    text-transform: capitalize;
+    margin-left: 1.75rem; /* Spacing between links */
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #000; /* Active/hover state */
+}
+
+/* --------------------
+ * Hero Section
+ * -------------------- */
+
+.hero-section {
+    /* * Using 90vh (90% of viewport height) instead of 100vh.
+     * This ensures the hero section is large but doesn't 
+     * awkwardly hide the top of the next content section.
+     */
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+
+    /* * == UPDATED BACKGROUND IMAGE ==
+     * Using your provided high-resolution image link.
+     * The linear-gradient darkens it slightly so the white text
+     * remains perfectly readable.
+     */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), 
+                      url('https://images.squarespace-cdn.com/content/v1/687e6fecc1541a12c017e920/1722378948.659844-XFHPVDLZKRWQPRZZDPRI/imgg-od3-6clwzapc.png?format=2500w');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Creates a subtle parallax effect */
+}
+
+.hero-title {
+    font-weight: 700; /* Bold */
+    font-size: 4.5rem; /* Large, cinematic text */
+}
+
+.hero-subtitle {
+    font-weight: 300; /* Light */
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+/* --------------------
+ * Responsive Adjustments
+ * -------------------- */
+
+@media (max-width: 991.98px) {
+    /* Center nav links on mobile */
+    .navbar-nav {
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: 0.5rem 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-title {
+        font-size: 2.75rem; /* Scale down title for smaller screens */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* --------------------
+ * Videos Section
+ * -------------------- */
+
+.section-title {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    color: #888;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Title underline effect */
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 1px;
+    background-color: #aaa;
+}
+
+.video-block {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.video-block:hover {
+    transform: scale(1.02);
+}
+
+/* Main "Serenity" Video */
+.main-video-block {
+    height: 500px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+
+    /* * == IMPORTANT ==
+     * Replace this gray background with your main video's
+     * background image, just like you did for the hero.
+     */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.5)),
+                      url('https://i.imgur.com/g8iYwT6.png'); /* Placeholder, e.g., url('/path/to/serenity-bg.jpg') */
+}
+
+.video-text-overlay {
+    z-index: 2;
+    position: relative;
+}
+
+.video-text-overlay h3 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.video-text-overlay p {
+    font-weight: 300;
+    font-size: 1rem;
+    max-width: 450px;
+}
+
+/* Secondary "Story" Videos */
+.secondary-video-block {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* * == IMPORTANT ==
+ * You will need to create separate classes
+ * to give each secondary video its unique background.
+ * * e.g.,
+ * .bonsai-story-bg { background-image: url('/path/to/story-bg.jpg'); }
+ * .renowned-bg { background-image: url('/path/to/renowned-bg.jpg'); }
+ * * Then add that class to the HTML div.
+ * For now, they all use this placeholder:
+ */
+.secondary-video-block {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('https://i.imgur.com/B9B1dAn.png'); /* Placeholder, e.g., url('/path/to/story-bg.jpg') */
+}
+
+
+.video-description {
+    padding-left: 1rem;
+}
+
+.video-story-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.15rem;
+    color: #aaa;
+}
+
+.video-description p {
+    font-weight: 400;
+    color: #333;
+}
+
+
+/* Play Button Icon */
+.play-icon-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.main-video-block .play-icon-wrapper {
+    /* The main video text is at the bottom, so we don't need to center the button */
+    top: calc(50% - 40px); /* Adjusts position to be above text */
+}
+
+.video-block:hover .play-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 26px solid #fff;
+    margin-left: 6px; /* Centers the triangle */
+}
+
+/* Smaller play button */
+.play-icon-wrapper.small {
+    width: 60px;
+    height: 60px;
+}
+
+.play-icon-wrapper.small .play-icon {
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 20px solid #fff;
+    margin-left: 4px;
+}
+
+/* --------------------
+ * Video Modal Styling
+ * -------------------- */
+.video-modal-content {
+    background-color: transparent;
+    border: none;
+}
+
+.modal-body {
+    padding: 0;
+    position: relative;
+}
+
+.video-modal-content .btn-close {
+    position: absolute;
+    top: -30px; /* Position *above* the video */
+    right: 0;
+    z-index: 10;
+    filter: invert(1) grayscale(100) brightness(200%); /* Makes it white */
+    opacity: 0.8;
+}
+
+/*
+ * --------------------
+ * Video Section
+ * --------------------
+ */
+
+.section-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Creates the underline effect */
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 1px;
+    background-color: #ccc;
+}
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 1px;
+    background-color: #888; /* Darker line for accent */
+    z-index: 1;
+}
+
+/* Large Featured Video */
+.video-card-large {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-thumbnail-large {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.video-card-large:hover .video-thumbnail-large {
+    transform: scale(1.05);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+                rgba(0, 0, 0, 0.7) 0%, 
+                rgba(0, 0, 0, 0.4) 50%, 
+                rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+}
+
+.video-card-text {
+    color: #fff;
+}
+
+.video-title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.video-description {
+    font-weight: 300;
+    font-size: 1rem;
+    max-width: 500px;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* CSS Play Icon */
+.play-icon {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.play-icon::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #fff;
+    margin-left: 5px; /* Centers the triangle */
+}
+
+.play-button:hover .play-icon {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Secondary Video Items */
+.video-card-small {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.video-thumbnail-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-thumbnail-small {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.video-thumbnail-link:hover .video-thumbnail-small {
+    transform: scale(1.05);
+}
+
+/* Small Play Icon */
+.play-icon-small {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(3px);
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.play-icon-small::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid #fff;
+    margin-left: 4px; /* Centers the triangle */
+}
+
+.video-thumbnail-link:hover .play-icon-small {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-item-text {
+    flex: 1;
+}
+
+.video-title-small {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #444;
+}
+
+/* Video Modal */
+.modal-lg {
+    max-width: 900px;
+}
+
+.modal-content {
+    background-color: #000;
+}
+
+.modal-header {
+    position: absolute;
+    top: -2.5rem; /* Position close button outside of video */
+    right: 0;
+    z-index: 1056; /* Above modal */
+}
+
+.modal-body {
+    padding: 0;
+}
+
+/* Responsive adjustment for small video cards */
+@media (min-width: 992px) {
+    .video-card-small {
+        flex-direction: row; /* Side-by-side on large screens */
+    }
+    
+    .video-thumbnail-link {
+        width: 50%;
+        flex-shrink: 0; /* Prevents image from shrinking */
+    }
+
+    .video-item-text {
+        width: 50%;
+        align-self: center; /* Vertically centers text next to image */
+    }
+}
+
+
+/*
+ * --------------------
+ * Philosophy Section
+ * --------------------
+ */
+
+.philosophy-main-title {
+    /* Using a standard serif font for contrast with the main body text */
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.3em; /* Heavy letter spacing matches the design */
+    text-transform: uppercase;
+    color: #333;
+}
+
+.philosophy-quote {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem; /* Large font size for prominence */
+    font-weight: 700; /* Extra bold */
+    line-height: 1.5; /* Increased line height for airy feel */
+    letter-spacing: 0.05em;
+    color: #000;
+    text-transform: uppercase;
+    text-align: left;
+    margin-right: 2rem;
+}
+
+.philosophy-text-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Styling for the Arabic text block */
+.arabic-text {
+    /* Ensures correct display of RTL language */
+    text-align: justify; 
+    direction: rtl; 
+}
+
+.philosophy-image-wrapper {
+    overflow: hidden;
+    margin-top: 3rem; 
+}
+
+.philosophy-bottom-img {
+    width: 100%;
+    height: 90vh; /* Makes the image take up most of the viewport height */
+    object-fit: cover; /* Ensures image fills the space without distortion */
+    /* Adjust object-position if you need to specifically focus on an area of the image */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .philosophy-quote {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        margin-bottom: 2rem;
+        margin-right: 0;
+        text-align: center; /* Center the quote on mobile */
+    }
+    .philosophy-main-title {
+        font-size: 1.8rem;
+        letter-spacing: 0.2em;
+        text-align: center !important;
+    }
+    .philosophy-bottom-img {
+        height: 60vh; /* Shorter image height on mobile */
+    }
+}
+
+/*attractive investment*/
+
+/*
+ * --------------------
+ * Exceptional Design Section
+ * --------------------
+ */
+
+.exceptional-design-section {
+    background-color: #ffffff; /* Ensure background is white */
+}
+
+.exceptional-main-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.design-subtitle {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.feature-rendering-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Optional subtle shadow */
+}
+
+.honest-design-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 0.75rem;
+}
+
+.honest-design-text {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* --------------------
+ * Four-Panel Grid Styling
+ * -------------------- */
+
+.design-grid {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.grid-panel {
+    min-height: 350px; /* Ensure a minimum height for all panels */
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Panel Color Overrides */
+.panel-space-utilization {
+    background-color: #efe8dc; /* Light tan/beige color */
+    color: #333;
+}
+
+.panel-craftsmanship {
+    background-color: #ffffff; /* White panel */
+    color: #333;
+    border-top: 1px solid #f0f0f0; /* Subtle separator from the image above */
+}
+
+.panel-image {
+    min-height: 350px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.grid-panel-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.panel-text p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Ensure images fill the panels exactly */
+.panel-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Ordering for the Image/Text Swap */
+/* The design image suggests: [Image A] | [Text B] | [Text C] | [Image D] */
+@media (min-width: 768px) {
+    /* For tablets and desktops, we explicitly set the order using Bootstrap's order utility */
+    .design-grid .col-md-6:nth-child(1) { order: 1; } /* Image A */
+    .design-grid .col-md-6:nth-child(2) { order: 2; } /* Text B */
+    .design-grid .col-md-6:nth-child(3) { order: 3; } /* Text C */
+    .design-grid .col-md-6:nth-child(4) { order: 4; } /* Image D */
+}
+
+/* Stacked order for mobile */
+@media (max-width: 767px) {
+    .grid-panel {
+        min-height: auto;
+        padding: 1.5rem;
+    }
+}
+
+/*vibrant location*/
+/*
+ * --------------------
+ * Vibrant Location Section
+ * --------------------
+ */
+
+/* Location Hero Banner */
+.location-hero-banner {
+    min-height: 400px;
+    /* NOTE: Replace this placeholder URL with your actual image path */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                      url('https://i.ibb.co.com/DPdWZ4mf/Screenshot-2025-11-17-141318.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.location-hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.location-hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* Map Placeholder */
+.bonsai-map-placeholder {
+    width: 100%;
+    height: 550px;
+    background-color: #f7f7f7;
+   
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-note {
+    font-style: italic;
+    color: #888;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* POI Navigation Tabs (Mimicking the colored bar) */
+.location-nav {
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.location-nav .nav-item {
+    flex: 1 1 20%; /* Ensure 5 equal columns */
+}
+
+.location-nav .nav-link {
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 1rem 0.5rem;
+    background-color: #ccc; /* Default neutral background */
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+/* Specific Tab Colors (Matching the design image) */
+#services-tab { background-color: #b67f70; }
+#cafes-tab { background-color: #b9937b; }
+#food-tab { background-color: #9d8c79; }
+#shopping-tab { background-color: #b8837a; }
+#education-tab { background-color: #80353b; }
+
+.location-nav .nav-link.active {
+    filter: brightness(1.2); /* Highlight active tab slightly */
+    color: #fff;
+    border: none;
+}
+.location-nav .nav-link:hover {
+    filter: brightness(1.1);
+}
+
+/* POI List Grid */
+.poi-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem 2rem;
+    padding: 2rem 0;
+    border: 1px solid #f0f0f0;
+    padding: 3rem;
+}
+
+.poi-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 0;
+}
+
+.poi-number {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #333;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.poi-logo {
+    max-height: 25px; /* Standardize logo size */
+    width: auto;
+}
+
+.poi-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Mobile adjustments */
+@media (max-width: 575px) {
+    .location-hero-banner {
+        min-height: 300px;
+    }
+    .location-hero-title {
+        font-size: 2rem;
+    }
+    .location-nav .nav-item {
+        flex: 1 1 50%; /* Stack tabs two per row on mobile */
+    }
+    .poi-list-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}
+
+/*
+ * --------------------
+ * Our Team Section
+ * --------------------
+ */
+
+.team-image-wrapper {
+    overflow: hidden;
+}
+
+.team-banner-img {
+    width: 100%;
+    height: 70vh; /* Large height to act as a hero banner for this section */
+    object-fit: cover;
+    object-position: center;
+}
+
+.team-main-title {
+    font-weight: 400;
+    font-size: 2.2rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.team-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+    max-width: 800px; /* Constraints text width for readability */
+}
+
+/* Logos Grid Styling */
+.team-logos-grid {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 2rem;
+}
+
+.team-partner-item {
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    /* Create grid lines using borders for a clean separation effect */
+    border-bottom: 1px solid #f0f0f0; 
+}
+
+/* Remove side borders on the ends */
+.team-logos-grid .col-md-3:not(:nth-child(4n)) {
+    border-right: 1px solid #f0f0f0;
+}
+
+/* Specific styling for the last row's bottom borders */
+.team-logos-grid .col-md-3:nth-child(n+5) { 
+    border-bottom: none; /* Remove bottom border from the last row */
+}
+
+.partner-role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.partner-logo {
+    max-height: 40px; /* Standardize logo height */
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    filter: grayscale(100%); /* Make logos grayscale for a cohesive look */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo:hover {
+    filter: none;
+    opacity: 1; /* Restore color on hover */
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .team-banner-img {
+        height: 50vh;
+    }
+    .team-main-title {
+        text-align: center !important;
+    }
+    .team-description {
+        text-align: center;
+    }
+    .team-logos-grid .col-6 {
+        /* On mobile, remove right border on the right-hand column items */
+        border-right: none !important;
+    }
+    .team-logos-grid .col-6:nth-child(odd) {
+         border-right: 1px solid #f0f0f0 !important; /* Keep border on left-hand column items */
+    }
+    /* Remove bottom border from the last row on mobile */
+    .team-logos-grid .col-6:nth-child(n+7) { 
+        border-bottom: none !important;
+    }
+}
+
+/*
+ * --------------------
+ * Gallery Section
+ * --------------------
+ */
+
+.gallery-title-block {
+    position: relative;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    /* Optional: Use a background texture to mimic the white marbled look */
+   /* background-image: url("https://i.ibb.co.com/mCQwdVb8/Screenshot-2025-11-17-144547.png");*/
+    background-repeat: repeat;
+}
+
+.gallery-main-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #333;
+    z-index: 2;
+    position: relative;
+}
+
+.title-divider {
+    width: 80px;
+    height: 1px;
+    background-color: #333;
+    margin: 10px auto 0;
+}
+
+/* --- Gallery Grid Layout --- */
+
+.gallery-grid {
+    /* Use negative margin to pull the grid slightly wider if needed */
+    margin: 0 -8px; 
+}
+
+.gallery-item-link {
+    display: block;
+    overflow: hidden;
+}
+
+.gallery-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+}
+
+/* Key Styling for the Mosaic Effect */
+
+/* Tall image (col-md-5/4) takes up the height of the two horizontal images stacked */
+.gallery-img-tall {
+    /* Calculated height: two small images + gap */
+    height: calc(100% + 8px); 
+}
+
+.gallery-img-wide {
+    height: auto; /* Maintains aspect ratio for the wide image */
+}
+
+/* Bottom Banner Image */
+.gallery-bottom-banner {
+    position: relative;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.gallery-img-bottom {
+    width: 100%;
+    height: 90vh; 
+    object-fit: cover;
+}
+
+.disclaimer-text-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid #ddd;
+}
+
+.disclaimer-text {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .gallery-main-title {
+        font-size: 2rem;
+    }
+    
+    /* Reset height calculations on mobile to stack images naturally */
+    .gallery-img-tall,
+    .gallery-img-wide {
+        height: auto;
+        margin-bottom: 8px; /* Add small margin for stacking */
+    }
+    
+    /* Ensure the tall image is full-width on mobile (order-1 is first) */
+    .gallery-grid .col-md-5,
+    .gallery-grid .col-md-7 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+## 2. CSS for the "Contact Us" and Footer
+
+Append these new styles to the *bottom* of your existing `style.css` file.
+
+```css
+/*
+ * --------------------
+ * Contact CTA Section
+ * --------------------
+ */
+
+.contact-cta-section {
+    position: relative;
+    padding: 0;
+    margin-top: 3rem;
+}
+
+.contact-image-banner {
+    position: relative;
+}
+
+.contact-banner-img {
+    width: 100%;
+    height: 400px; /* Set a fixed height for the banner area */
+    object-fit: cover;
+    display: block;
+}
+
+.contact-overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px; /* Constrain the width of the button block */
+    padding: 0 15px;
+    z-index: 10;
+    text-align: center;
+}
+
+.contact-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    flex: 1;
+    text-decoration: none;
+    padding: 1rem 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-button i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.cta-visit {
+    color: #333;
+    background-color: #fff;
+    border-right: 1px solid #eee;
+}
+
+.cta-join {
+    color: #fff;
+    background-color: #333;
+}
+
+.cta-visit:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.cta-join:hover {
+    background-color: #444;
+}
+
+.waiting-list-note {
+    color: #888;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-bottom: 2rem; /* Spacing below the note */
+}
+
+/*
+ * --------------------
+ * Main Footer Section (Address & Logos)
+ * --------------------
+ */
+
+.main-footer {
+    background-color: #fff;
+    padding-top: 5rem !important;
+}
+
+.footer-address strong {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.license-info p,
+.developer-info p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #666;
+    margin: 0;
+}
+
+.developer-info {
+    display: flex;
+    gap: 3rem;
+}
+
+.developer-info strong {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Right Column: Logo Styling */
+.bonsai-logo-wrapper {
+    position: relative;
+    /* This SVG background mimics the light brushstroke graphic from the design */
+    background-image: url("https://i.ibb.co.com/7tpfP8d4/Untitled-design-20.png");
+    background-repeat: no-repeat;
+    background-size: 80% auto;
+    background-position: center 30%;
+}
+
+.bonsai-logo-text {
+    position: relative;
+    top: 50%;
+    /* Padding helps to move the text down and away from the top edge */
+    padding-top: 25%; 
+    display: inline-block;
+}
+
+.bonsai-logo-icon {
+    font-family: Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    line-height: 0.5;
+}
+
+.bonsai-wordmark {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #333;
+    display: block;
+    margin-top: 10px;
+}
+
+.logo-subtext {
+    font-size: 0.7rem;
+    color: #888;
+    letter-spacing: 0.15em;
+    margin-top: 5px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+    .contact-banner-img {
+        height: 300px;
+    }
+
+    .contact-buttons-wrapper {
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .cta-button {
+        border-right: none !important;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .cta-join {
+        border-bottom: none;
+    }
+    
+    .footer-col-right {
+        text-align: center !important;
+    }
+
+    .bonsai-logo-wrapper {
+        background-position: center 50%;
+        background-size: 100% auto;
+    }
+    
+    .bonsai-logo-text {
+        padding-top: 0;
+        margin-top: 2rem;
+    }
+
+    .developer-info {
+        justify-content: space-around;
+    }
+}
+
+
+/*
+ * --------------------
+ * Final Footer Section (Exact Match to Image)
+ * --------------------
+ */
+
+.final-footer {
+    /* Background color matching the design image's light tan/beige */
+    background-color: #efe8dc; 
+    color: #444;
+    padding-top: 5rem !important; /* Generous top padding */
+    padding-bottom: 5rem !important; /* Generous bottom padding */
+}
+
+/* Ensure content within the container starts at the left as per design */
+.final-footer .container .row > div {
+    text-align: left;
+}
+
+.final-footer-brand {
+    font-family: 'Poppins', sans-serif; /* Adjusted font for a softer look */
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    color: #333;
+}
+
+.final-footer-subtitle,
+.final-footer-location {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #555;
+    font-weight: 300; /* Lighter weight for subtle text */
+}
+
+.final-footer-legal {
+    margin-top: 2.5rem !important; /* Increased margin for separation */
+}
+
+.final-footer-legal p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #7d6b5e; /* Slightly darker color for legal text */
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 300; /* Lighter weight for subtle text */
+}
+
+.final-footer-social {
+    margin-top: 4rem !important; /* Increased margin for separation */
+    display: flex; /* Use flexbox to align icons */
+    gap: 1.5rem; /* Space between icons */
+}
+
+.final-footer-social .social-icon {
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.2s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.final-footer-social .social-icon:hover {
+    color: #7d6b5e; /* Hover color */
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .final-footer .container .row > div {
+        text-align: center; /* Center everything on mobile */
+    }
+    .final-footer-social {
+        justify-content: center; /* Center social icons */
+    }
+}
